@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".ui.splash.SplashActivity">
+
+    <ImageView
+        android:id="@+id/logo_iv"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_300sdp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_msg_code"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/app_name_tv"/>
+
+    <TextView
+        android:id="@+id/app_name_tv"
+        style="@style/XLarge_Text_Bold_Style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        app:layout_constraintTop_toBottomOf="@id/logo_iv"
+        app:layout_constraintBottom_toTopOf="@id/loading_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/loading_tv"
+        style="@style/Small_Text_Normal_Style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/loading_msg"
+        app:layout_constraintTop_toBottomOf="@id/app_name_tv"
+        app:layout_constraintBottom_toTopOf="@id/progressbar"
+        app:layout_constraintEnd_toEndOf="@id/app_name_tv"
+        app:layout_constraintStart_toStartOf="@id/app_name_tv" />
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/circle_bg"
+        android:indeterminateTint="@android:color/white"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@id/loading_tv"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/loading_tv"
+        app:layout_constraintStart_toStartOf="@id/loading_tv"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
