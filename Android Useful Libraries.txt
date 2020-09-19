@@ -1,4 +1,41 @@
+    import android.app.Application;
+    import android.content.Context;
 
+    import androidx.multidex.MultiDex;
+
+    public class VisApp extends Application {
+        private static VisApp instance;
+
+        public synchronized static VisApp getInstance() {
+            return instance;
+        }
+
+        public Context getAppContext(){
+            return instance.getApplicationContext();
+        }
+
+        @Override
+        public void onCreate() {
+            super.onCreate();
+            instance = this;
+            MultiDex.install(this);
+        }
+    }
+
+    // build.gradle(project level)
+    classpath 'com.google.gms:google-services:4.3.3'
+    
+    maven { url 'https://jitpack.io' }
+
+    // build.gradle(module level)
+    compileOptions{
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures{
+        viewBinding true
+    }
 
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'com.intuit.ssp:ssp-android:1.0.6'
@@ -6,7 +43,7 @@
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.navigation:navigation-fragment:2.3.0'
     implementation 'androidx.navigation:navigation-ui:2.3.0'
-    implementation 'com.github.JalalJanKhan3336:jkutils:2.0' (maven { url 'https://jitpack.io' })
+    implementation 'com.github.JalalJanKhan3336:jkutils:2.0'
 
     // Country Codes (Phone Number Code)
     implementation 'com.hbb20:ccp:2.4.0'
