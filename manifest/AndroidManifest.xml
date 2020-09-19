@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Put below lines inside application tag in Manifest file -->
+<activity
+    android:name=".ui.splash.SplashActivity"
+    android:screenOrientation="portrait">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity>
+<activity
+    android:name=".ui.home.activity.MainActivity"
+    android:screenOrientation="portrait" />
+<activity
+    android:name=".ui.auth.activity.AuthActivity"
+    android:screenOrientation="portrait" />
