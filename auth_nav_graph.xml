@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_nav_graph"
+    app:startDestination="@id/phoneInputFragment">
+
+    <fragment
+        android:id="@+id/phoneInputFragment"
+        android:name="com.thesoftparrot.storageapp.visapp.ui.auth.fragment.PhoneInputFragment"
+        android:label="@string/phone_auth"
+        tools:layout="@layout/fragment_phone_input" >
+        <action
+            android:id="@+id/action_phoneInputFragment_to_verifyCodeFragment"
+            app:destination="@id/verifyCodeFragment"
+            app:enterAnim="@anim/fragment_close_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/fragment_close_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/verifyCodeFragment"
+        android:name="com.thesoftparrot.storageapp.visapp.ui.auth.fragment.VerifyCodeFragment"
+        android:label="@string/verify_code"
+        tools:layout="@layout/fragment_verify_code" >
+        <action
+            android:id="@+id/action_verifyCodeFragment_to_verificationSuccessFragment"
+            app:destination="@id/verificationSuccessFragment"
+            app:enterAnim="@anim/fragment_close_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/fragment_close_exit" />
+        <argument
+            android:name="phone"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/verificationSuccessFragment"
+        android:name="com.thesoftparrot.storageapp.visapp.ui.auth.fragment.VerificationSuccessFragment"
+        android:label="fragment_verification_success"
+        tools:layout="@layout/fragment_verification_success" />
+</navigation>
